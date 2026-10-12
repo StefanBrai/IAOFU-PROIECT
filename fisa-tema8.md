@@ -1,8 +1,9 @@
 # Fișă de lucru — Tema 8: Rescrierea documentelor administrative în limbaj clar
 
-**Proiect IAOFU · 2026-2027 · Reper săptămâna 2 (Echipe și alegere)**
+**Proiect IAOFU 2026-2027**
+
 **Domeniu delimitat:** regulamente și instrucțiuni de **burse studențești** dintr-o universitate publică
-**Echipă:** _(nume membri)_ · **Data:** 2026-10-07
+**Echipă:** Brai S. , Braniste C. , Ignatescu D.
 
 ---
 
@@ -14,7 +15,7 @@ regulament scris în limbaj administrativ.
 
 **Sarcina precisă:** Studentul lipește un fragment din regulamentul oficial de burse. Aplicația îl
 **reformulează în limbaj clar, în română**, păstrând termenii și condițiile importante (cuantumuri,
-praguri de medie, venit, termene) și afișează **alături fraza originală**. Studentul poate reveni oricând
+praguri de medie, venit, termene) și **afișează alături fraza originală**. Studentul poate reveni oricând
 la textul oficial.
 
 ## 2. Ce decide / corectează utilizatorul (nu acceptă automat)
@@ -29,21 +30,21 @@ la textul oficial.
 
 1. Utilizatorul lipește / selectează un fragment din regulament (1–3 paragrafe).
 2. Sistemul produce versiunea în limbaj clar, **propoziție cu propoziție, aliniată la original**.
-3. Interfață în două coloane: **original ↔ reformulat**; fiecare segment are buton „vezi originalul" și
+3. Interfață în două coloane: **original/reformulat**; fiecare segment are buton „vezi originalul" și
    marcaj „reformulare incertă" când e cazul.
 4. Un rezumat scurt al **condițiilor și termenelor** extrase (listă: ce trebuie, până când).
 
 ## 4. Date: existente, drept de utilizare, de adnotat
 
-- **Sursă:** 15–25 pagini din regulamente/instrucțiuni de burse **publice** (site-uri de universitate),
+- **Sursă:** 15–25 pagini din regulamente/instrucțiuni de burse publice (site-uri de universitate),
   domeniu bine delimitat; se citează proveniența și dreptul de folosire.
-- **De adnotat de echipă:** **30 de enunțuri** reformulate manual ca referință (gold), cu
+- **De adnotat de echipă:** **30 de enunțuri** reformulate manual ca referință, cu
   **verificarea manuală a condițiilor și termenelor** păstrate.
 - Set de **test separat** de exemplele pe care se reglează sistemul (cerință comună).
 
 ## 5. Variantă de comparație (referință) și măsuri
 
-**Referință simplă:** reformulare prin reguli/liste de substituții lexicale (dicționar birocratic→comun)
+**Referință simplă:** reformulare prin reguli/liste de substituții lexicale (dicționar birocratic-comun)
 **fără model de limbaj**, sau un prompt minimal fără aliniere la original și fără marcarea incertitudinii.
 
 **Măsuri că IA ajută:**
@@ -67,14 +68,20 @@ sau omite un termen) — studentul ia o decizie greșită crezând textul clar.
 ---
 
 ### Legătura cu cerințele comune
-- ✔ Flux complet de lucru, prima versiune delimitată.
-- ✔ Componentă IA evaluabilă + variantă de referință simplă.
-- ✔ Set de test separat; raportare performanță tehnică **și** erori observate.
-- ✔ Test cu utilizatori (4–6) pe lângă evaluarea automată.
-- ✔ Proveniența și dreptul datelor, costul estimat al apelurilor, mod de corectare/anulare a unui rezultat.
+-  Flux complet de lucru, prima versiune delimitată.
+-  Componentă IA evaluabilă + variantă de referință simplă.
+-  Set de test separat; raportare performanță tehnică **și** erori observate.
+-  Test cu utilizatori (4–6) pe lângă evaluarea automată.
+-  Proveniența și dreptul datelor, costul estimat al apelurilor, mod de corectare/anulare a unui rezultat.
 
 ### De completat până în săptămâna 3
 - [ ] Alegerea universității/regulamentului concret și verificarea dreptului de folosire.
 - [ ] Colectarea celor 15–25 de pagini + împărțire train/test.
-- [ ] Redactarea celor 30 de enunțuri de referință adnotate.
-- [ ] Estimarea costului apelurilor la model.
+- [ ] Incercarea redactarii celor 30 de enunțuri de referință adnotate.
+- [ ] Alegerea celor 5 cazuri de test din cele 30 de enunțuri.
+
+### Notite suplimentare
+- Curatarea fragmentelor de spatii, simboluri etc inainte de trimiterea catre model
+- Impartirea in propozitii
+- Impartirea enumerarilor in subfragmente
+- Verificator suplimentar: e o bucată de cod simplă, fără IA, care compară originalul cu reformularea și verifică dacă au rămas aceleași „lucruri care contează”: numere, date, praguri, sume. LLM-ul poate schimba subtil o condiție și apoi să pară totuși sigur pe el. Verificatorul nu se lasă păcălit, pentru că doar numără și compară. 

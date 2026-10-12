@@ -1,0 +1,14 @@
+1. Extrage „faptele critice” din original, cu regex și o listă de cuvinte:
+   - numere și medii: 8, 8,50, 9.00;
+   - sume: 1.500 lei, 750 RON;
+   - date și termene: 15 octombrie, 15.10.2026, în 10 zile lucrătoare;
+   - comparații: cel puțin, minimum, ≥, peste, sub, maximum, până la, inclusiv;
+   - negații și obligații: nu, nu pot, obligatoriu, doar, numai;
+   - legături logice: și / sau între condiții.
+2. Extrage același lucru din reformulare.
+3. Compară cele două liste:
+   - lipsește un număr sau o dată → incert („termenul 15.10 a dispărut”);
+   - a apărut un număr care nu era în original → incert (LLM-ul a inventat ceva);
+   - comparația s-a schimbat, de exemplu cel puțin 8 → peste 8 → incert (≥ a devenit >);
+   - a dispărut un nu sau un doar → incert.
+4. Marchează segmentul cu motivul exact, care apare în interfață lângă semnalul vizual.
